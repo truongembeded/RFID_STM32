@@ -1,0 +1,269 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: nguyen OS, fsoft, LIC=32B1Q-NHVYU-CXPU6-D3DL4-F28WR-77LXE
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+C:\Users\OS\OneDrive - Industrial University of HoChiMinh City\Desktop\project RFID\SD_Card\Card.uvprojx
+Project File Date:  02/25/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+main.c(3): warning: In file included from...
+../SD_Card/ff.h(138): warning: padding struct 'FATFS' with 1 byte to align 'id' [-Wpadded]
+        WORD    id;                             /* Volume mount ID */
+                ^
+../SD_Card/ff.h(209): warning: padding struct 'FIL' with 2 bytes to align 'fptr' [-Wpadded]
+        FSIZE_t fptr;                   /* File read/write pointer (Zeroed on file open) */
+                ^
+main.c(5): warning: no previous extern declaration for non-static variable 'FatFs' [-Wmissing-variable-declarations]
+FATFS FatFs;            /* FatFs work area needed for each volume */
+      ^
+main.c(5): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+FATFS FatFs;            /* FatFs work area needed for each volume */
+^
+main.c(6): warning: no previous extern declaration for non-static variable 'Fil' [-Wmissing-variable-declarations]
+FIL Fil;                        /* File object needed for each open file */
+    ^
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+FIL Fil;                        /* File object needed for each open file */
+^
+4 warnings generated.
+compiling main.c...
+spi.c(46): warning: implicit conversion loses integer precision: 'uint16_t' (aka 'unsigned short') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return SPI_I2S_ReceiveData(SPI1);
+        ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+compiling spi.c...
+sdmm.c(486): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                                        cs = csd[9] + ((WORD)csd[8] << 8) + ((DWORD)(csd[7] & 63) << 16) + 1;
+                                             ~~~~~~~^~~~~~~~~~~~~~~~~~~~~ ~
+sdmm.c(489): warning: implicit conversion loses integer precision: 'int' to 'BYTE' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                        n = (csd[5] & 15) + ((csd[10] & 128) >> 7) + ((csd[9] & 3) << 1) + 2;
+                                          ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+sdmm.c(490): warning: implicit conversion changes signedness: 'int' to 'DWORD' (aka 'unsigned int') [-Wsign-conversion]
+                                        cs = (csd[8] >> 6) + ((WORD)csd[7] << 2) + ((WORD)(csd[6] & 3) << 10) + 1;
+                                           ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+3 warnings generated.
+compiling sdmm.c...
+delay.c(1): warning: In file included from...
+../SD_Card/delay.h(4): warning: In file included from...
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(87): warning: In file included from...
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_tim.h(50): warning: padding size of 'TIM_TimeBaseInitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+1 warning generated.
+compiling delay.c...
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/misc.c(131): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+                                               ~ ^~~~~~~~~~~
+1 warning generated.
+compiling misc.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+ff.c(615): warning: implicit conversion loses integer precision: 'int' to 'WORD' (aka 'unsigned short') [-Wimplicit-int-conversion]
+        rv = rv << 8 | ptr[0];
+           ~ ~~~~~~~~^~~~~~~~
+ff.c(1201): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                        wc |= fs->win[bc % SS(fs)] << 8;        /* Merge 2nd byte of the entry */
+                           ~~ ~~~~~~~~~~~~~~~~~~~~~^~~~
+ff.c(1274): warning: implicit conversion loses integer precision: 'int' to 'BYTE' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                        *p = (clst & 1) ? ((*p & 0x0F) | ((BYTE)val << 4)) : (BYTE)val;         /* Update 1st byte */
+                           ~               ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+ff.c(22): warning: In file included from...
+../SD_Card/ff.h(138): warning: padding struct 'FATFS' with 1 byte to align 'id' [-Wpadded]
+        WORD    id;                             /* Volume mount ID */
+                ^
+../SD_Card/ff.h(209): warning: padding struct 'FIL' with 2 bytes to align 'fptr' [-Wpadded]
+        FSIZE_t fptr;                   /* File read/write pointer (Zeroed on file open) */
+                ^
+ff.c(3923): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                if (clst < 2) ABORT(fs, FR_INT_ERR);
+                                                                   ^
+ff.c(3924): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                if (clst == 0xFFFFFFFF) ABORT(fs, FR_DISK_ERR);
+                                                                              ^
+ff.c(3928): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                        if (sect == 0) ABORT(fs, FR_INT_ERR);
+                                                            ^
+ff.c(3935): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                if (disk_read(fs->pdrv, rbuff, sect, cc) != RES_OK) ABORT(fs, FR_DISK_ERR);
+                                                                                                          ^
+ff.c(3966): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                if (move_window(fs, fp->sect) != FR_OK) ABORT(fs, FR_DISK_ERR); /* Move sector window */
+                                                                              ^
+ff.c(4030): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                if (clst == 1) ABORT(fs, FR_INT_ERR);
+                                                                    ^
+ff.c(4031): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                if (clst == 0xFFFFFFFF) ABORT(fs, FR_DISK_ERR);
+                                                                              ^
+ff.c(4036): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                        if (fs->winsect == fp->sect && sync_window(fs) != FR_OK) ABORT(fs, FR_DISK_ERR);        /* Write-back sector cache */
+                                                                                                       ^
+ff.c(4044): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                        if (sect == 0) ABORT(fs, FR_INT_ERR);
+                                                            ^
+ff.c(4051): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                if (disk_write(fs->pdrv, wbuff, sect, cc) != RES_OK) ABORT(fs, FR_DISK_ERR);
+                                                                                                           ^
+ff.c(4070): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                if (sync_window(fs) != FR_OK) ABORT(fs, FR_DISK_ERR);
+                                                                                    ^
+ff.c(4085): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                if (move_window(fs, fp->sect) != FR_OK) ABORT(fs, FR_DISK_ERR); /* Move sector window */
+                                                                              ^
+ff.c(4500): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                        if (clst == 1) ABORT(fs, FR_INT_ERR);
+                                                                            ^
+ff.c(4501): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                        if (clst == 0xFFFFFFFF) ABORT(fs, FR_DISK_ERR);
+                                                                                      ^
+ff.c(4525): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                        if (clst == 0xFFFFFFFF) ABORT(fs, FR_DISK_ERR);
+                                                                                      ^
+ff.c(4526): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                        if (clst <= 1 || clst >= fs->n_fatent) ABORT(fs, FR_INT_ERR);
+                                                                                                    ^
+ff.c(4532): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                                        if (nsect == 0) ABORT(fs, FR_INT_ERR);
+                                                                             ^
+ff.c(22): warning: In file included from...
+../SD_Card/ff.h(247): warning: padding size of 'FILINFO' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+ff.c(4911): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                if (res != FR_OK) ABORT(fs, res);
+                                                ^
+24 warnings generated.
+compiling ff.c...
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(22): warning: In file included from...
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_spi.h(86): warning: padding size of 'I2S_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(493): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = (uint16_t)1 << (uint16_t)itpos;
+         ~ ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(838): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(844): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itmask = 0x01 << itmask;
+         ~ ~~~~~^~~~~~~~~
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_spi.c(890): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  itpos = 0x01 << (SPI_I2S_IT & 0x0F);
+        ~ ~~~~~^~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_spi.c...
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(22): warning: In file included from...
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/inc\stm32f10x_tim.h(50): warning: padding size of 'TIM_TimeBaseInitTypeDef' with 1 byte to alignment boundary [-Wpadded]
+typedef struct
+        ^
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(725): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+             TIM_BDTRInitStruct->TIM_Break | TIM_BDTRInitStruct->TIM_BreakPolarity |
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(1982): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2012): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp = CCER_CCNE_Set << TIM_Channel;
+      ~ ~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+C:/Users/OS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/StdPeriph_Driver/src/stm32f10x_tim.c(2057): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  tmp1 = CCER_CCE_Set << (uint16_t)TIM_Channel;
+       ~ ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+compiling stm32f10x_tim.c...
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+1 warning generated.
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=7890 RO-data=286 RW-data=8 ZI-data=2248  
+".\Objects\Card.axf" - 0 Error(s), 45 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: Framework Version: 3.6.0
+   * Component: GPIO Version: 3.6.0
+   * Component: RCC Version: 3.6.0
+   * Component: SPI Version: 3.6.0
+   * Component: TIM Version: 3.6.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_Target_1
+  C:\Users\OS\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\OS\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include
+  C:\Users\OS\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.6.0
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:3.6.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_spi.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_spi.h
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:3.6.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_tim.c
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>
