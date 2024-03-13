@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  # RFID Door Control System with STM32
 
 ![image](https://github.com/khokhanptv/Embedded-Software_2023/assets/136571945/1ae21e81-c878-4cc7-9beb-9b7b9f9b1b5e)
@@ -20,3 +21,6 @@ This project implements a door control system using RFID technology, STM32 micro
 - Detailed SPI communication between components....
 
 25/2
+=======
+# RFID_STM32
+>>>>>>> 9ab86c2d69516fe1164fb55737854a8cbfea9d89
